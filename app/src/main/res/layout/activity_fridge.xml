@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".FridgeActivity">
 
+
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/fridge"
-        ></ImageView>
-
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"></ImageView>
 
     <Button
         android:id="@+id/homef"
@@ -50,5 +52,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:clickable="true"
+        android:src="@drawable/addfoodbutton"
+        app:fabCustomSize="75dp"
+        app:backgroundTint="#2C7696"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.692"
+        app:rippleColor="@null" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

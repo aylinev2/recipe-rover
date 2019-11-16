@@ -44,7 +44,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
             overridePendingTransition(0,0);
         } else if (v.getId() == R.id.homep) {
-            Intent intent = new Intent(this, ProfileActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             overridePendingTransition(0,0);
         }

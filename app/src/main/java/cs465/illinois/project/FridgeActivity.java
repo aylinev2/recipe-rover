@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class FridgeActivity extends AppCompatActivity implements View.OnClickListener {
     private Button homeButton;
     private Button savedButton;
     private Button profileButton;
+    private FloatingActionButton addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,10 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
         profileButton.setVisibility(View.VISIBLE);
         profileButton.setBackgroundColor(Color.TRANSPARENT);
         profileButton.setOnClickListener(this);
+
+        addButton = (FloatingActionButton) findViewById(R.id.floatingAddButton);
+        addButton.setOnClickListener(this);
+
     }
 
     public void onClick(View v) {
@@ -45,6 +52,10 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
             overridePendingTransition(0,0);
         } else if (v.getId() == R.id.profilef) {
             Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0,0);
+        } else if (v.getId() == R.id.floatingAddButton) {
+            Intent intent = new Intent(this, AddItemActivity.class);
             startActivity(intent);
             overridePendingTransition(0,0);
         }
