@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
@@ -44,6 +45,19 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_fridge);
         GridView gridView = (GridView)findViewById(R.id.gridview);
         gridView.setAdapter(ingredientsAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parent, View view, int position, long id) {
+                Ingredient ingredient = ingredientArrayList.get(position);
+                String ingredientName = getString(ingredient.getName());
+
+                Intent intent = new Intent(FridgeActivity.this, EditItemActivity.class);
+                intent.putExtra("ingredientName", ingredientName);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+
+            }
+        });
 
         homeButton = (Button) findViewById(R.id.homef);
         homeButton.setVisibility(View.VISIBLE);
@@ -67,7 +81,6 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
         recipesButton.setVisibility(View.VISIBLE);
         recipesButton.setBackgroundColor(Color.TRANSPARENT);
         recipesButton.setOnClickListener(this);
-
     }
 
     public void onClick(View v) {
