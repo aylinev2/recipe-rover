@@ -16,4 +16,17 @@
     <string name="tomato">Tomato</string>
     <string name="pasta">Pasta</string>
     <string name="tortillas">Tortilla</string>
+
+    <string-array name="units_array">
+        <item>units</item>
+        <item>cups</item>
+        <item>oz</item>
+        <item>tsp</item>
+        <item>tbsp</item>
+        <item>pt</item>
+        <item>qt</item>
+        <item>gal</item>
+        <item>lbs</item>
+    </string-array>
+
 </resources>
