@@ -1,17 +1,29 @@
 package cs465.illinois.project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button fridgeButton;
     private Button savedButton;
     private Button profileButton;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    private ArrayList<Recipe> recipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +44,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         profileButton.setVisibility(View.VISIBLE);
         profileButton.setBackgroundColor(Color.TRANSPARENT);
         profileButton.setOnClickListener(this);
+
+        recyclerView = (RecyclerView) findViewById(R.id.suggestion_list);
+
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        recipes = new ArrayList<Recipe>();
+
+        adapter = new RecipeAdapter(this, recipes);
+        recyclerView.setAdapter(adapter);
+        loadRecipes();
     }
 
     public void onClick(View v) {
@@ -48,5 +73,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             overridePendingTransition(0,0);
         }
+    }
+
+    private void loadRecipes(){
+        recipes.add(new Recipe(
+                "fettuccine alfredo",
+                getImage(this, "alfredo"),
+                "30 minutes",
+                "easy",
+                100,
+                "You've got everything!"
+        ));
+        recipes.add(new Recipe(
+                "spaghetti and meatballs",
+                getImage(this, "spaghetti"),
+                "35 minutes",
+                "easy",
+                95,
+                "Worcestershire sauce"
+        ));
+        recipes.add(new Recipe(
+                "pepperoni pizza",
+                getImage(this, "pizza"),
+                "2 hours 20 minutes",
+                "medium",
+                80,
+                "active dry yeast, chopped fresh oregano"
+        ));
+    }
+
+    public static Drawable getImage(Context c, String ImageName) {
+        return c.getResources().getDrawable(c.getResources().getIdentifier(ImageName, "drawable", c.getPackageName()));
     }
 }

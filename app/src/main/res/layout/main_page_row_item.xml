@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="50dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginBottom="15dp"
+    android:background="#ffffff"
+    app:cardCornerRadius="20dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="top|left"
+        >
+
+
+        <ImageView
+            android:id="@+id/imgRecipePicture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="#000000"
+            android:textSize="20sp"
+
+            android:id="@+id/txtRecipeName"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingLeft="20dp"
+            >
+
+            <TextView
+                android:id="@+id/txtMissingIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:textSize="16sp"
+
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                />
+
+            <TextView
+                android:id="@+id/txtPrepTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/quicksand_medium"
+                android:textSize="16sp"
+                android:background="#d1ffe2"
+
+                android:drawableLeft="@drawable/clock"
+                android:drawablePadding="3dp"
+                android:padding="4dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/txtMissingIngredients"
+                />
+
+            <TextView
+                android:id="@+id/txtDifficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/quicksand_medium"
+                android:textSize="16sp"
+                android:background="#fff0cf"
+
+                android:drawableLeft="@drawable/spatula"
+                android:drawablePadding="3dp"
+                android:padding="4dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_toRightOf="@+id/txtPrepTime"
+                android:layout_below="@+id/txtMissingIngredients"
+                />
+
+            <TextView
+                android:id="@+id/txtPercentMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:textSize="16sp"
+
+                android:textColor="#00a108"
+
+                android:layout_below="@+id/txtPrepTime"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:layout_margin="10dp"
+
+                android:layout_below="@+id/txtDifficulty"
+                android:layout_alignParentRight="true"
+
+                android:background="@drawable/heart"
+                />
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
