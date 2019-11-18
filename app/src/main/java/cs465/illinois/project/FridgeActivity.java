@@ -7,8 +7,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FridgeActivity extends AppCompatActivity implements View.OnClickListener {
     private Button homeButton;
@@ -16,10 +21,31 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
     private Button profileButton;
     private FloatingActionButton addButton;
 
+    public Ingredient[] ingredients = {
+            new Ingredient(R.string.butter, R.drawable.ingredient_butter),
+            new Ingredient(R.string.cheese, R.drawable.ingredient_cheese),
+            new Ingredient(R.string.chicken, R.drawable.ingredient_chicken),
+            new Ingredient(R.string.milk, R.drawable.ingredient_milk),
+            new Ingredient(R.string.garlic,R.drawable.ingredient_garlic),
+            new Ingredient(R.string.herb, R.drawable.ingredient_herb),
+            new Ingredient(R.string.olive_oil, R.drawable.ingredient_olive_oil),
+            new Ingredient(R.string.onion, R.drawable.ingredient_onion),
+            new Ingredient(R.string.paprika, R.drawable.ingredient_paprika),
+            new Ingredient(R.string.salt, R.drawable.ingredient_salt),
+            new Ingredient(R.string.spice, R.drawable.ingredient_spice),
+            new Ingredient(R.string.eggs, R.drawable.ingredient_egg),
+            new Ingredient(R.string.tomato, R.drawable.ingredient_tomato),
+            new Ingredient(R.string.pasta, R.drawable.ingredient_pasta)
+    };
+    public List<Ingredient> ingredientArrayList = new ArrayList<>(Arrays.asList(ingredients));
+    public IngredientAdapter ingredientsAdapter = new IngredientAdapter(this, ingredientArrayList);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
+        GridView gridView = (GridView)findViewById(R.id.gridview);
+        gridView.setAdapter(ingredientsAdapter);
 
         homeButton = (Button) findViewById(R.id.homef);
         homeButton.setVisibility(View.VISIBLE);
