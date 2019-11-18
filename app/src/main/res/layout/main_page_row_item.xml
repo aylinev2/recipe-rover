@@ -122,14 +122,19 @@
                 android:background="@drawable/heart"
                 />
 
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:layout_margin="10dp"
+                android:layout_below="@+id/txtDifficulty"
+                android:layout_alignParentRight="true"
+
+                android:background="@drawable/heartfilled"
+                />
+
         </RelativeLayout>
 
-
-
-
-
     </LinearLayout>
-
-
 
 </androidx.cardview.widget.CardView>

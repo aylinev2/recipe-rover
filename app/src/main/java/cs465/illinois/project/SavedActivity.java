@@ -12,6 +12,7 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
     private Button homeButton;
     private Button fridgeButton;
     private Button profileButton;
+    private Button completedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,11 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
         profileButton.setVisibility(View.VISIBLE);
         profileButton.setBackgroundColor(Color.TRANSPARENT);
         profileButton.setOnClickListener(this);
+
+        completedButton = (Button) findViewById(R.id.completed);
+        completedButton.setVisibility(View.VISIBLE);
+        completedButton.setBackgroundColor(Color.TRANSPARENT);
+        completedButton.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -47,7 +53,10 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
             overridePendingTransition(0,0);
+        } else if (v.getId() == R.id.completed) {
+            Intent intent = new Intent(this, CompletedActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0,0);
         }
-
     }
 }

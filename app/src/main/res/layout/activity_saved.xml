@@ -7,10 +7,10 @@
     tools:context=".SavedActivity">
 
     <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/savedrecipes"
-        ></ImageView>
+        android:background="@drawable/savedrecipes"></ImageView>
 
     <Button
         android:id="@+id/homes"
@@ -49,5 +49,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/completed"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="76dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
