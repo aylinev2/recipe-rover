@@ -19,9 +19,10 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
     private Button homeButton;
     private Button savedButton;
     private Button profileButton;
+    private Button recipesButton;
     private FloatingActionButton addButton;
 
-    public Ingredient[] ingredients = {
+    public static Ingredient[] ingredients = {
             new Ingredient(R.string.butter, R.drawable.ingredient_butter),
             new Ingredient(R.string.cheese, R.drawable.ingredient_cheese),
             new Ingredient(R.string.chicken, R.drawable.ingredient_chicken),
@@ -32,12 +33,9 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
             new Ingredient(R.string.onion, R.drawable.ingredient_onion),
             new Ingredient(R.string.paprika, R.drawable.ingredient_paprika),
             new Ingredient(R.string.salt, R.drawable.ingredient_salt),
-            new Ingredient(R.string.spice, R.drawable.ingredient_spice),
-            new Ingredient(R.string.eggs, R.drawable.ingredient_egg),
-            new Ingredient(R.string.tomato, R.drawable.ingredient_tomato),
-            new Ingredient(R.string.pasta, R.drawable.ingredient_pasta)
+            new Ingredient(R.string.spice, R.drawable.ingredient_spice)
     };
-    public List<Ingredient> ingredientArrayList = new ArrayList<>(Arrays.asList(ingredients));
+    public static List<Ingredient> ingredientArrayList = new ArrayList<>(Arrays.asList(ingredients));
     public IngredientAdapter ingredientsAdapter = new IngredientAdapter(this, ingredientArrayList);
 
     @Override
@@ -65,6 +63,11 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
         addButton = (FloatingActionButton) findViewById(R.id.floatingAddButton);
         addButton.setOnClickListener(this);
 
+        recipesButton = (Button) findViewById(R.id.recipes);
+        recipesButton.setVisibility(View.VISIBLE);
+        recipesButton.setBackgroundColor(Color.TRANSPARENT);
+        recipesButton.setOnClickListener(this);
+
     }
 
     public void onClick(View v) {
@@ -82,6 +85,10 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
             overridePendingTransition(0,0);
         } else if (v.getId() == R.id.floatingAddButton) {
             Intent intent = new Intent(this, AddItemActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0,0);
+        } else if (v.getId() == R.id.recipes) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             overridePendingTransition(0,0);
         }

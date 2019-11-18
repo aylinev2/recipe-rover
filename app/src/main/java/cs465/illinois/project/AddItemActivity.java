@@ -21,9 +21,11 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
     private Button backButton;
     private Button addButton;
 
+    AutoCompleteTextView actv;
     DatePickerDialog picker;
     EditText datePurchaseEntry;
     EditText expiryDateEntry;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (this, android.R.layout.select_dialog_item, food);
         //Getting the instance of AutoCompleteTextView
-        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
+        actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         actv.setThreshold(1);//will start working from first character
         actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
 
@@ -76,7 +78,19 @@ public class AddItemActivity extends AppCompatActivity implements View.OnClickLi
             overridePendingTransition(0,0);
         }
         else if (v.getId() == R.id.addButton){
-//            ingredientArrayList.add(new Ingredient(R.string.tortillas, R.drawable.ingredient_tortilla));
+            String name = actv.getText().toString();
+
+            if("eggs".equalsIgnoreCase(name)) {
+                FridgeActivity.ingredientArrayList.add(new Ingredient(R.string.eggs, R.drawable.ingredient_egg));
+            } else if("pasta".equalsIgnoreCase(name)) {
+                FridgeActivity.ingredientArrayList.add(new Ingredient(R.string.pasta, R.drawable.ingredient_pasta));
+            } else if("tomato".equalsIgnoreCase((name))) {
+                FridgeActivity.ingredientArrayList.add(new Ingredient(R.string.tomato, R.drawable.ingredient_tomato));
+            } else {
+                FridgeActivity.ingredientArrayList.add(new Ingredient(R.string.tortillas, R.drawable.ingredient_tortilla));
+            }
+
+
 //            ingredientsAdapter.notifyDataSetChanged();
             Intent intent = new Intent(this, FridgeActivity.class);
             startActivity(intent);
