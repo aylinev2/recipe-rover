@@ -52,16 +52,76 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.858" />
 
-    <EditText
-        android:id="@+id/ingredientName"
-        android:layout_width="339dp"
+    <AutoCompleteTextView
+        android:id="@+id/editIngredientName"
+        android:layout_width="338dp"
         android:layout_height="43dp"
-        android:text=""
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/quicksand"
+        android:hint="Add ingredient..."
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <EditText
+        android:id="@+id/editqty"
+        android:layout_width="62dp"
+        android:layout_height="41dp"
+        android:fontFamily="@font/quicksand"
+        android:backgroundTint="@color/colorPrimary"
+        android:hint="Qty.."
+        android:ems="10"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.266" />
+
+    <EditText
+        android:id="@+id/editexp"
+        android:layout_width="210dp"
+        android:layout_height="43dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/quicksand"
+        android:hint="Enter Date"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.43" />
+
+    <EditText
+        android:id="@+id/editpurchasedate"
+        android:layout_width="211dp"
+        android:layout_height="44dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/quicksand"
+        android:hint="Enter Date"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.595" />
+
+    <Spinner
+        android:id="@+id/editunit"
+        android:layout_width="123dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/quicksand"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.266" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

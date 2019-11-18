@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Filter;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button fridgeButton;
     private Button savedButton;
     private Button profileButton;
+    private Button filterButton;
+    private Button sortButton;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -45,6 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         profileButton.setBackgroundColor(Color.TRANSPARENT);
         profileButton.setOnClickListener(this);
 
+        filterButton = (Button) findViewById(R.id.filter);
+        filterButton.setVisibility(View.VISIBLE);
+        filterButton.setBackgroundColor(Color.TRANSPARENT);
+        filterButton.setOnClickListener(this);
+
+        sortButton = (Button) findViewById(R.id.sort);
+        sortButton.setVisibility(View.VISIBLE);
+        sortButton.setBackgroundColor(Color.TRANSPARENT);
+        sortButton.setOnClickListener(this);
+
         recyclerView = (RecyclerView) findViewById(R.id.suggestion_list);
 
         recyclerView.setHasFixedSize(true);
@@ -70,6 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             overridePendingTransition(0,0);
         } else if (v.getId() == R.id.profile) {
             Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0,0);
+        } else if (v.getId() == R.id.sort) {
+            Intent intent = new Intent(this, SortActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0,0);
+        } else if (v.getId() == R.id.filter) {
+            Intent intent = new Intent(this, FilterActivity.class);
             startActivity(intent);
             overridePendingTransition(0,0);
         }

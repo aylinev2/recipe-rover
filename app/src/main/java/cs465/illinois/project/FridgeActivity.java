@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class FridgeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -52,7 +53,13 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
                 String ingredientName = getString(ingredient.getName());
 
                 Intent intent = new Intent(FridgeActivity.this, EditItemActivity.class);
+                Ingredient clickedIngredient = findIngredientUsingIterator(ingredientName, ingredientArrayList);
+
                 intent.putExtra("ingredientName", ingredientName);
+                intent.putExtra("qty", clickedIngredient.getQty());
+                intent.putExtra("qtyUnit", clickedIngredient.getQtyUnit());
+                intent.putExtra("datePurchased", clickedIngredient.getDatePurchased());
+                intent.putExtra("dateExpired", clickedIngredient.getDateExpired());
                 startActivity(intent);
                 overridePendingTransition(0,0);
 
@@ -81,6 +88,17 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
         recipesButton.setVisibility(View.VISIBLE);
         recipesButton.setBackgroundColor(Color.TRANSPARENT);
         recipesButton.setOnClickListener(this);
+    }
+
+    public Ingredient findIngredientUsingIterator(String name, List<Ingredient> customers) {
+        Iterator<Ingredient> iterator = customers.iterator();
+        while (iterator.hasNext()) {
+            Ingredient ingredient = iterator.next();
+            if (name.equalsIgnoreCase(getString(ingredient.getName()))) {
+                return ingredient;
+            }
+        }
+        return null;
     }
 
     public void onClick(View v) {
