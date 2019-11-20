@@ -96,6 +96,10 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
                 "You've got everything!"
         ));
         recipes.add(new Recipe(
+                "carne asada tacos",
+                getImage(this, "tacos")
+        ));
+        recipes.add(new Recipe(
                 "spaghetti and meatballs",
                 getImage(this, "spaghetti"),
                 "35 minutes",

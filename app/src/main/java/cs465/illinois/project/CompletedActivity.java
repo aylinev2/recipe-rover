@@ -88,6 +88,14 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
 
     private void loadRecipes(){
         recipes.add(new Recipe(
+                "fettuccine alfredo",
+                getImage(this, "alfredo"),
+                "30 minutes",
+                "easy",
+                100,
+                "You've got everything!"
+        ));
+        recipes.add(new Recipe(
                 "grilled cheese",
                 getImage(this, "grilledcheese"),
                 "10 minutes",
@@ -96,13 +104,50 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
                 "You've got everything!"
         ));
         recipes.add(new Recipe(
-                "fettuccine alfredo",
-                getImage(this, "alfredo"),
-                "30 minutes",
-                "easy",
-                100,
-                "You've got everything!"
+                "broccoli and beef",
+                getImage(this, "broccolibeef")
         ));
+        recipes.add(new Recipe(
+                "beef shwarma",
+                getImage(this, "beefshwarma")
+        ));
+        recipes.add(new Recipe(
+                "burrito",
+                getImage(this, "burrito")
+        ));
+        recipes.add(new Recipe(
+                "chocolate chip cookies",
+                getImage(this, "cookies")
+        ));
+        recipes.add(new Recipe(
+                "carne asada tacos",
+                getImage(this, "tacos")
+        ));
+        recipes.add(new Recipe(
+                "huevos rancheros",
+                getImage(this, "huevosrancheros")
+        ));
+        recipes.add(new Recipe(
+                "buttermilk pancakes",
+                getImage(this, "pancakes")
+        ));
+        recipes.add(new Recipe(
+                "cheese and chicken quesadilla",
+                getImage(this, "quesadilla")
+        ));
+        recipes.add(new Recipe(
+                "classic steak",
+                getImage(this, "steak")
+        ));
+        recipes.add(new Recipe(
+                "tuna sandwich",
+                getImage(this, "tunasandwich")
+        ));
+        recipes.add(new Recipe(
+                "chicken fajitas",
+                getImage(this, "chickenfajitas")
+        ));
+
 
     }
 }
