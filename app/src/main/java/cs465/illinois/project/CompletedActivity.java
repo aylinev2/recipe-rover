@@ -1,6 +1,8 @@
 package cs465.illinois.project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,16 +10,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
+import static cs465.illinois.project.MainActivity.getImage;
+
 public class CompletedActivity extends AppCompatActivity implements View.OnClickListener {
     private Button homeButton;
     private Button fridgeButton;
     private Button profileButton;
     private Button favoritesButton;
 
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    private ArrayList<Recipe> recipes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed);
+
+        recyclerView = (RecyclerView) findViewById(R.id.completed_list);
+
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        recipes = new ArrayList<Recipe>();
+
+        adapter = new FavAdapter(this, recipes);
+        recyclerView.setAdapter(adapter);
+
+        loadRecipes();
 
         homeButton = (Button) findViewById(R.id.homec);
         homeButton.setVisibility(View.VISIBLE);
@@ -58,5 +84,25 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
             startActivity(intent);
             overridePendingTransition(0,0);
         }
+    }
+
+    private void loadRecipes(){
+        recipes.add(new Recipe(
+                "grilled cheese",
+                getImage(this, "grilledcheese"),
+                "10 minutes",
+                "easy",
+                100,
+                "You've got everything!"
+        ));
+        recipes.add(new Recipe(
+                "fettuccine alfredo",
+                getImage(this, "alfredo"),
+                "30 minutes",
+                "easy",
+                100,
+                "You've got everything!"
+        ));
+
     }
 }
