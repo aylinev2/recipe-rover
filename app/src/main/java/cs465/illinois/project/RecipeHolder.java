@@ -2,6 +2,7 @@ package cs465.illinois.project;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,18 +10,23 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
 
     private TextView txtRecipeName, txtPrepTime, txtDifficulty, txtMissingIngredients, txtPercentMatch;
     private ImageView imgRecipePicture;
+    private Button btnMainFavorited;
+    private View item;
 
     public RecipeHolder(View itemView){
         super(itemView);
+        item = itemView;
         txtRecipeName = itemView.findViewById(R.id.txtRecipeName);
         imgRecipePicture = itemView.findViewById(R.id.imgRecipePicture);
         txtPrepTime = itemView.findViewById(R.id.txtPrepTime);
         txtDifficulty = itemView.findViewById(R.id.txtDifficulty);
         txtMissingIngredients = itemView.findViewById(R.id.txtMissingIngredients);
         txtPercentMatch = itemView.findViewById(R.id.txtPercentMatch);
+        btnMainFavorited = itemView.findViewById(R.id.btnMainFavorited);
     }
 
-    public void setInfo(Recipe recipe) {
+    public void setInfo(Recipe recipe, int position) {
+        item.setId(position);
         txtRecipeName.setText(recipe.getRecipeName());
         imgRecipePicture.setImageDrawable(recipe.getRecipePicture());
         txtPrepTime.setText(recipe.getPrepTime());

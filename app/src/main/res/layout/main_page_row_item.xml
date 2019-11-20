@@ -110,21 +110,12 @@
                 android:layout_below="@+id/txtPrepTime"
                 />
 
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-
-                android:layout_margin="10dp"
-
-                android:layout_below="@+id/txtDifficulty"
-                android:layout_alignParentRight="true"
-
-                android:background="@drawable/heart"
-                />
 
             <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+
+                android:id="@+id/btnMainFavorited"
 
                 android:layout_margin="10dp"
                 android:layout_below="@+id/txtDifficulty"

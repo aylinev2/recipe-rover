@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Filter;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button profileButton;
     private Button filterButton;
     private Button sortButton;
+    private Button favoritedButton;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter = new RecipeAdapter(this, recipes);
         recyclerView.setAdapter(adapter);
         loadRecipes();
+
     }
 
     public void onClick(View v) {

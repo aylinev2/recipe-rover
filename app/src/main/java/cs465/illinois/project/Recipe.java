@@ -9,6 +9,8 @@ public class Recipe {
     private String difficulty;
     private double percentMatch;
     private String missingIngredients;
+    boolean favorited = false;
+    boolean completed = false;
 
     public Recipe(String recipeName, Drawable recipePicture, String prepTime, String difficulty,
                   double percentMatch, String missingIngredients){
@@ -19,6 +21,12 @@ public class Recipe {
         this.percentMatch = percentMatch;
         this.missingIngredients = missingIngredients;
     }
+
+    public Recipe(String recipeName, Drawable recipePicture){
+        this.recipeName = recipeName;
+        this.recipePicture = recipePicture;
+    }
+
 
     public String getRecipeName(){
         return recipeName;
@@ -43,5 +51,25 @@ public class Recipe {
     public String getMissingIngredients(){
         return missingIngredients;
     }
+
+    public boolean getCompleted(){
+        return completed;
+    }
+
+    public boolean getFavorited(){
+        return favorited;
+    }
+
+    public void setCompleted(boolean completed){
+        this.completed = completed;
+    }
+
+    public void setFavorited(boolean favorited){
+        this.favorited = favorited;
+    }
+
+
+
+
 }
 

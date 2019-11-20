@@ -77,7 +77,7 @@
         android:clickable="true"
         android:src="@drawable/addfoodbutton"
         app:fabCustomSize="75dp"
-        app:backgroundTint="#2C7696"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.895"
