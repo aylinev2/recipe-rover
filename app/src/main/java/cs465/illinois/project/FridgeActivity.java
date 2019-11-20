@@ -31,9 +31,6 @@ public class FridgeActivity extends AppCompatActivity implements View.OnClickLis
             new Ingredient(R.string.milk, R.drawable.ingredient_milk),
             new Ingredient(R.string.garlic,R.drawable.ingredient_garlic),
             new Ingredient(R.string.herb, R.drawable.ingredient_herb),
-            new Ingredient(R.string.olive_oil, R.drawable.ingredient_olive_oil),
-            new Ingredient(R.string.onion, R.drawable.ingredient_onion),
-            new Ingredient(R.string.paprika, R.drawable.ingredient_paprika),
             new Ingredient(R.string.salt, R.drawable.ingredient_salt),
             new Ingredient(R.string.spice, R.drawable.ingredient_spice)
     };

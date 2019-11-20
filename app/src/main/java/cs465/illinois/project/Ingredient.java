@@ -14,8 +14,8 @@ public class Ingredient {
         this.imageResource = imageResource;
         this.qty = "1";
         this.qtyUnit = "units";
-        this.datePurchased = "01/01/1970";
-        this.dateExpired = "01/01/1971";
+        this.datePurchased = "01/01/2019";
+        this.dateExpired = "02/02/2019";
     }
     public Ingredient(int name, int imageResource, String qty, String qtyUnit, String datePurchased, String dateExpired) {
         this.name = name;
