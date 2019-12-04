@@ -23,6 +23,13 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
         txtMissingIngredients = itemView.findViewById(R.id.txtMissingIngredients);
         txtPercentMatch = itemView.findViewById(R.id.txtPercentMatch);
         btnMainFavorited = itemView.findViewById(R.id.btnMainFavorited);
+
+        btnMainFavorited.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecipeAdapter.onClickListener.favouriteButtonOnClick(v, getAdapterPosition());
+            }
+        });
     }
 
     public void setInfo(Recipe recipe, int position) {

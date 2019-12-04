@@ -9,10 +9,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Filter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -69,7 +71,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         recipes = new ArrayList<Recipe>();
 
-        adapter = new RecipeAdapter(this, recipes);
+        adapter = new RecipeAdapter(this, recipes, new RecipeAdapterListener() {
+            @Override
+            public void favouriteButtonOnClick(View v, int position) {
+                //Toast.makeText(v.getContext(), "ITEM PRESSED = " + position, Toast.LENGTH_SHORT).show();
+                //position indicates what recipe was clicked on
+                if(v.getBackground().getConstantState() == getResources().getDrawable(R.drawable.heartfilled).getConstantState()) {
+                    //flip background image
+                    v.setBackgroundResource(R.drawable.heart);
+                    //flip the favourited boolean
+                    recipes.get(position).setFavorited(false);
+                } else if(v.getBackground().getConstantState() == getResources().getDrawable(R.drawable.heart).getConstantState()) {
+                    v.setBackgroundResource(R.drawable.heartfilled);
+                    recipes.get(position).setFavorited(true);
+                }
+            }
+        });
         recyclerView.setAdapter(adapter);
         loadRecipes();
 

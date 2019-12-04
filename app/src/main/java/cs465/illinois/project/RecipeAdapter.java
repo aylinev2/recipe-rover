@@ -13,10 +13,12 @@ import java.util.ArrayList;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeHolder> {
     private Context context;
     private ArrayList<Recipe> recipes;
+    public static RecipeAdapterListener onClickListener;
 
-    public RecipeAdapter(Context context, ArrayList<Recipe> recipes){
+    public RecipeAdapter(Context context, ArrayList<Recipe> recipes, RecipeAdapterListener listener){
         this.context = context;
         this.recipes = recipes;
+        this.onClickListener = listener;
     }
 
     @NonNull
@@ -39,3 +41,5 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeHolder> {
 
 
 }
+
+

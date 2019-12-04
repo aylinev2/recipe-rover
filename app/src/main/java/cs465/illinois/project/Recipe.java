@@ -68,8 +68,18 @@ public class Recipe {
         this.favorited = favorited;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "recipeName='" + recipeName + '\'' +
+                ", recipePicture=" + recipePicture +
+                ", prepTime='" + prepTime + '\'' +
+                ", difficulty='" + difficulty + '\'' +
+                ", percentMatch=" + percentMatch +
+                ", missingIngredients='" + missingIngredients + '\'' +
+                ", favorited=" + favorited +
+                ", completed=" + completed +
+                '}';
+    }
 }
 

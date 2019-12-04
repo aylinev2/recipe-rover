@@ -121,7 +121,7 @@
                 android:layout_below="@+id/txtDifficulty"
                 android:layout_alignParentRight="true"
 
-                android:background="@drawable/heartfilled"
+                android:background="@drawable/heart"
                 />
 
         </RelativeLayout>
