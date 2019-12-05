@@ -9,12 +9,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.Filter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -76,13 +72,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void favouriteButtonOnClick(View v, int position) {
                 //Toast.makeText(v.getContext(), "ITEM PRESSED = " + position, Toast.LENGTH_SHORT).show();
                 //position indicates what recipe was clicked on
-                if(v.getBackground().getConstantState() == getResources().getDrawable(R.drawable.heartfilled).getConstantState()) {
+                if(v.getBackground().getConstantState() == getResources().getDrawable(R.drawable.icon_heartfilled).getConstantState()) {
                     //flip background image
-                    v.setBackgroundResource(R.drawable.heart);
+                    v.setBackgroundResource(R.drawable.icon_heart);
                     //flip the favourited boolean
                     recipes.get(position).setFavorited(false);
-                } else if(v.getBackground().getConstantState() == getResources().getDrawable(R.drawable.heart).getConstantState()) {
-                    v.setBackgroundResource(R.drawable.heartfilled);
+                } else if(v.getBackground().getConstantState() == getResources().getDrawable(R.drawable.icon_heart).getConstantState()) {
+                    v.setBackgroundResource(R.drawable.icon_heartfilled);
                     recipes.get(position).setFavorited(true);
                 }
             }
@@ -119,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void loadRecipes(){
         recipes.add(new Recipe(
                 "fettuccine alfredo",
-                getImage(this, "alfredo"),
+                getImage(this, "recipe_alfredo"),
                 "30 minutes",
                 "easy",
                 100,
@@ -127,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ));
         recipes.add(new Recipe(
                 "spaghetti and meatballs",
-                getImage(this, "spaghetti"),
+                getImage(this, "recipe_spaghetti"),
                 "35 minutes",
                 "easy",
                 95,
@@ -135,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ));
         recipes.add(new Recipe(
                 "pepperoni pizza",
-                getImage(this, "pizza"),
+                getImage(this, "recipe_pizza"),
                 "2 hours 20 minutes",
                 "medium",
                 80,

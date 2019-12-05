@@ -89,7 +89,7 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
     private void loadRecipes(){
         recipes.add(new Recipe(
                 "fettuccine alfredo",
-                getImage(this, "alfredo"),
+                getImage(this, "recipe_alfredo"),
                 "30 minutes",
                 "easy",
                 100,
@@ -97,7 +97,7 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
         ));
         recipes.add(new Recipe(
                 "grilled cheese",
-                getImage(this, "grilledcheese"),
+                getImage(this, "recipe_grilledcheese"),
                 "10 minutes",
                 "easy",
                 100,
@@ -105,47 +105,47 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
         ));
         recipes.add(new Recipe(
                 "broccoli and beef",
-                getImage(this, "broccolibeef")
+                getImage(this, "recipe_broccolibeef")
         ));
         recipes.add(new Recipe(
                 "beef shwarma",
-                getImage(this, "beefshwarma")
+                getImage(this, "recipe_beefshwarma")
         ));
         recipes.add(new Recipe(
                 "burrito",
-                getImage(this, "burrito")
+                getImage(this, "recipe_burrito")
         ));
         recipes.add(new Recipe(
                 "chocolate chip cookies",
-                getImage(this, "cookies")
+                getImage(this, "recipe_cookies")
         ));
         recipes.add(new Recipe(
                 "carne asada tacos",
-                getImage(this, "tacos")
+                getImage(this, "recipe_tacos")
         ));
         recipes.add(new Recipe(
                 "huevos rancheros",
-                getImage(this, "huevosrancheros")
+                getImage(this, "recipe_huevosrancheros")
         ));
         recipes.add(new Recipe(
                 "buttermilk pancakes",
-                getImage(this, "pancakes")
+                getImage(this, "recipe_pancakes")
         ));
         recipes.add(new Recipe(
                 "cheese and chicken quesadilla",
-                getImage(this, "quesadilla")
+                getImage(this, "recipe_quesadilla")
         ));
         recipes.add(new Recipe(
                 "classic steak",
-                getImage(this, "steak")
+                getImage(this, "recipe_steak")
         ));
         recipes.add(new Recipe(
                 "tuna sandwich",
-                getImage(this, "tunasandwich")
+                getImage(this, "recipe_tunasandwich")
         ));
         recipes.add(new Recipe(
                 "chicken fajitas",
-                getImage(this, "chickenfajitas")
+                getImage(this, "recipe_chickenfajitas")
         ));
 
 

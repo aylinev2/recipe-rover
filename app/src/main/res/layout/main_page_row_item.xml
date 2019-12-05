@@ -67,7 +67,7 @@
                 android:textSize="16sp"
                 android:background="#d1ffe2"
 
-                android:drawableLeft="@drawable/clock"
+                android:drawableLeft="@drawable/icon_clock"
                 android:drawablePadding="3dp"
                 android:padding="4dp"
                 android:layout_marginTop="10dp"
@@ -87,7 +87,7 @@
                 android:textSize="16sp"
                 android:background="#fff0cf"
 
-                android:drawableLeft="@drawable/spatula"
+                android:drawableLeft="@drawable/icon_spatula"
                 android:drawablePadding="3dp"
                 android:padding="4dp"
                 android:layout_marginTop="10dp"
@@ -121,7 +121,7 @@
                 android:layout_below="@+id/txtDifficulty"
                 android:layout_alignParentRight="true"
 
-                android:background="@drawable/heart"
+                android:background="@drawable/icon_heart"
                 />
 
         </RelativeLayout>

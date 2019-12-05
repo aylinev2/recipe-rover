@@ -10,7 +10,7 @@
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/savedrecipes"></ImageView>
+        android:background="@drawable/screen_savedrecipes"></ImageView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/saved_list"

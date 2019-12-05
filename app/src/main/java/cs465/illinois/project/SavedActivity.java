@@ -89,7 +89,7 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
     private void loadRecipes(){
         recipes.add(new Recipe(
                 "fettuccine alfredo",
-                getImage(this, "alfredo"),
+                getImage(this, "recipe_alfredo"),
                 "30 minutes",
                 "easy",
                 100,
@@ -97,11 +97,11 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
         ));
         recipes.add(new Recipe(
                 "carne asada tacos",
-                getImage(this, "tacos")
+                getImage(this, "recipe_tacos")
         ));
         recipes.add(new Recipe(
                 "spaghetti and meatballs",
-                getImage(this, "spaghetti"),
+                getImage(this, "recipe_spaghetti"),
                 "35 minutes",
                 "easy",
                 95,
