@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static ArrayList<Recipe> recipes;
     public static ArrayList<Recipe> originalRecipes;
+
     public static HashMap<String, Boolean> clicked = new HashMap<String, Boolean>() {{
-        put("italian", false); put("vegetarian", false); put("dinner", false); put("breakfast", false);
+        put("italian", false); put("vegetarian", false); put("dinner", false); put("lunch", false);
     }};
 
     private MainActivity act = this;
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             recipes = new ArrayList<Recipe>();
             loadRecipes();
         }
+
+        originalRecipes = new ArrayList<Recipe>();
+        loadOriginalRecipes();
 
         adapter = new RecipeAdapter(this, recipes, new RecipeAdapterListener() {
             @Override
@@ -161,6 +165,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "active dry yeast, chopped fresh oregano"
         ));
 
+    }
+
+    private void loadOriginalRecipes(){
+        originalRecipes.add(new Recipe(
+                "spaghetti and meatballs",
+                getImage(this, "recipe_spaghetti"),
+                "1 hour",
+                60,
+                "easy",
+                95,
+                "Worcestershire sauce"
+        ));
+        originalRecipes.add(new Recipe(
+                "fettuccine alfredo",
+                getImage(this, "recipe_alfredo"),
+                "20 minutes",
+                20,
+                "hard",
+                100,
+                "You've got everything!"
+        ));
+        originalRecipes.add(new Recipe(
+                "pepperoni pizza",
+                getImage(this, "recipe_pizza"),
+                "2 hours",
+                120,
+                "medium",
+                65,
+                "active dry yeast, chopped fresh oregano"
+        ));
     }
 
     public static Drawable getImage(Context c, String ImageName) {
