@@ -2,7 +2,9 @@ package cs465.illinois.project;
 
 import android.graphics.drawable.Drawable;
 
-public class Recipe {
+import java.io.Serializable;
+
+public class Recipe implements Serializable {
     private String recipeName;
     private Drawable recipePicture;
     private String prepTime;

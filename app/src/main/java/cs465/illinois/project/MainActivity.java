@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private ArrayList<Recipe> recipes;
+    public static ArrayList<Recipe> recipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        recipes = new ArrayList<Recipe>();
+        if (recipes == null || recipes.size() == 0){
+            recipes = new ArrayList<Recipe>();
+            loadRecipes();
+        }
 
         adapter = new RecipeAdapter(this, recipes, new RecipeAdapterListener() {
             @Override
@@ -84,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         recyclerView.setAdapter(adapter);
-        loadRecipes();
 
     }
 

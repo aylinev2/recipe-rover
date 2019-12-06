@@ -1,10 +1,15 @@
 package cs465.illinois.project;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import static cs465.illinois.project.MainActivity.getImage;
+import static cs465.illinois.project.MainActivity.recipes;
 
 public class RecipeHolder extends RecyclerView.ViewHolder {
 
@@ -12,8 +17,9 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
     private ImageView imgRecipePicture;
     private Button btnMainFavorited;
     private View item;
+    private Context context;
 
-    public RecipeHolder(View itemView){
+    public RecipeHolder(View itemView, Context context){
         super(itemView);
         item = itemView;
         txtRecipeName = itemView.findViewById(R.id.txtRecipeName);
@@ -30,6 +36,8 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
                 RecipeAdapter.onClickListener.favouriteButtonOnClick(v, getAdapterPosition());
             }
         });
+
+        this.context = context;
     }
 
     public void setInfo(Recipe recipe, int position) {
@@ -40,6 +48,12 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
         txtDifficulty.setText(recipe.getDifficulty());
         txtMissingIngredients.setText("missing: " + recipe.getMissingIngredients());
         txtPercentMatch.setText(recipe.getPercentMatch() + "% match");
+        if (recipes.get(position).getFavorited() == true){
+            btnMainFavorited.setBackgroundDrawable(getImage(context, "icon_heartfilled"));
+        } else {
+            btnMainFavorited.setBackgroundDrawable(getImage(context, "icon_heart"));
+        }
+
     }
 
 }

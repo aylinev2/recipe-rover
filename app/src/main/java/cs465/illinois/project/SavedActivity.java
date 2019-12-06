@@ -13,6 +13,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import static cs465.illinois.project.MainActivity.getImage;
+import static cs465.illinois.project.MainActivity.recipes;
 
 public class SavedActivity extends AppCompatActivity implements View.OnClickListener {
     private Button homeButton;
@@ -24,7 +25,7 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private ArrayList<Recipe> recipes;
+    private ArrayList<Recipe> savedRecipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,16 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        recipes = new ArrayList<Recipe>();
+        savedRecipes = new ArrayList<Recipe>();
 
-        adapter = new FavAdapter(this, recipes);
+        adapter = new FavAdapter(this, savedRecipes);
         recyclerView.setAdapter(adapter);
 
-        loadRecipes();
+        for (Recipe r : recipes) {
+            if (r.getFavorited() == true){
+                savedRecipes.add(r);
+            }
+        }
 
         homeButton = (Button) findViewById(R.id.homes);
         homeButton.setVisibility(View.VISIBLE);
@@ -85,31 +90,6 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
             overridePendingTransition(0,0);
         }
     }
-
-    private void loadRecipes(){
-        recipes.add(new Recipe(
-                "fettuccine alfredo",
-                getImage(this, "recipe_alfredo"),
-                "30 minutes",
-                "easy",
-                100,
-                "You've got everything!"
-        ));
-        recipes.add(new Recipe(
-                "carne asada tacos",
-                getImage(this, "recipe_tacos")
-        ));
-        recipes.add(new Recipe(
-                "spaghetti and meatballs",
-                getImage(this, "recipe_spaghetti"),
-                "35 minutes",
-                "easy",
-                95,
-                "Worcestershire sauce"
-        ));
-
-    }
-
 
 
 
