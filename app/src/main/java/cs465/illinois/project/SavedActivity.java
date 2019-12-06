@@ -69,6 +69,7 @@ public class SavedActivity extends AppCompatActivity implements View.OnClickList
         completedButton.setVisibility(View.VISIBLE);
         completedButton.setBackgroundColor(Color.TRANSPARENT);
         completedButton.setOnClickListener(this);
+
     }
 
     public void onClick(View v) {

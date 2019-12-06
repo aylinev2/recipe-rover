@@ -20,14 +20,14 @@
         <ImageView
             android:id="@+id/imgRecipePicture"
             android:layout_width="100dp"
-            android:layout_height="match_parent"
+            android:layout_height="55dp"
             android:scaleType="centerCrop"
             />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|center_horizontal"
+            android:layout_gravity="center"
             android:layout_weight="1"
 
             android:padding="10dp"
@@ -39,15 +39,15 @@
             android:id="@+id/txtRecipeName"
             />
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/btnFavFavorited"
+<!--        <Button-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:id="@+id/btnFavFavorited"-->
 
-            android:layout_margin="10dp"
+<!--            android:layout_margin="10dp"-->
 
-            android:background="@drawable/icon_heartfilled"
-            />
+<!--            android:background="@drawable/icon_heart"-->
+<!--            />-->
 
 
     </LinearLayout>
