@@ -8,17 +8,19 @@ public class Recipe implements Serializable {
     private String recipeName;
     private Drawable recipePicture;
     private String prepTime;
+    private int prepTimeInMinutes;
     private String difficulty;
     private double percentMatch;
     private String missingIngredients;
     boolean favorited = false;
     boolean completed = false;
 
-    public Recipe(String recipeName, Drawable recipePicture, String prepTime, String difficulty,
+    public Recipe(String recipeName, Drawable recipePicture, String prepTime, int prepTimeInMinutes, String difficulty,
                   double percentMatch, String missingIngredients){
         this.recipeName = recipeName;
         this.recipePicture = recipePicture;
         this.prepTime = prepTime;
+        this.prepTimeInMinutes = prepTimeInMinutes;
         this.difficulty = difficulty;
         this.percentMatch = percentMatch;
         this.missingIngredients = missingIngredients;
@@ -70,12 +72,21 @@ public class Recipe implements Serializable {
         this.favorited = favorited;
     }
 
+    public int getPrepTimeInMinutes() {
+        return prepTimeInMinutes;
+    }
+
+    public void setPrepTimeInMinutes(int prepTimeInMinutes) {
+        this.prepTimeInMinutes = prepTimeInMinutes;
+    }
+
     @Override
     public String toString() {
         return "Recipe{" +
                 "recipeName='" + recipeName + '\'' +
                 ", recipePicture=" + recipePicture +
                 ", prepTime='" + prepTime + '\'' +
+                ", prepTimeInMinutes=" + prepTimeInMinutes +
                 ", difficulty='" + difficulty + '\'' +
                 ", percentMatch=" + percentMatch +
                 ", missingIngredients='" + missingIngredients + '\'' +

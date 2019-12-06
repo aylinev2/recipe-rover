@@ -42,7 +42,7 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
         btnViewRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecipeAdapter.onClickListener.viewRecipeButtonOnClick();
+                RecipeAdapter.onClickListener.viewRecipeButtonOnClick(v, getAdapterPosition());
             }
         });
 

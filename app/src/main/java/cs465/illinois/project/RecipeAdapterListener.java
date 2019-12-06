@@ -4,5 +4,5 @@ import android.view.View;
 
 public interface RecipeAdapterListener {
     void favouriteButtonOnClick(View v, int position);
-    void viewRecipeButtonOnClick();
+    void viewRecipeButtonOnClick(View v, int position);
 }

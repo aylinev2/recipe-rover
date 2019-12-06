@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -90,8 +91,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             @Override
-            public void viewRecipeButtonOnClick() {
+            public void viewRecipeButtonOnClick(View v, int position) {
+                //Toast.makeText(v.getContext(), "Recipe Selected:" + recipes.get(position).getRecipeName(), Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(act, ViewRecipeActivity.class);
+                intent.putExtra("recipeName", recipes.get(position).getRecipeName());
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -126,27 +130,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void loadRecipes(){
         recipes.add(new Recipe(
-                "fettuccine alfredo",
-                getImage(this, "recipe_alfredo"),
-                "30 minutes",
-                "easy",
-                100,
-                "You've got everything!"
-        ));
-        recipes.add(new Recipe(
                 "spaghetti and meatballs",
                 getImage(this, "recipe_spaghetti"),
-                "35 minutes",
+                "1 hour 15 minutes",
+                75,
+                "medium",
+                90,
+                "Worcestershire sauce"
+        ));
+        recipes.add(new Recipe(
+                "fettuccine alfredo",
+                getImage(this, "recipe_alfredo"),
+                "20 minutes",
+                20,
                 "easy",
                 95,
-                "Worcestershire sauce"
+                "You've got everything!"
         ));
         recipes.add(new Recipe(
                 "pepperoni pizza",
                 getImage(this, "recipe_pizza"),
                 "2 hours",
-                "medium",
-                80,
+                120,
+                "hard",
+                100,
                 "active dry yeast, chopped fresh oregano"
         ));
     }

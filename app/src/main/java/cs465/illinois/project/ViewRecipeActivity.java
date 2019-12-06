@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class ViewRecipeActivity extends AppCompatActivity implements View.OnClickListener {
     private Button fridgeButton;
@@ -14,6 +15,7 @@ public class ViewRecipeActivity extends AppCompatActivity implements View.OnClic
     private Button profileButton;
     private Button backButton;
     private Button finishButton;
+    private ImageView recipePicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,18 @@ public class ViewRecipeActivity extends AppCompatActivity implements View.OnClic
         finishButton.setVisibility(View.VISIBLE);
         finishButton.setBackgroundColor(Color.TRANSPARENT);
         finishButton.setOnClickListener(this);
+
+        recipePicture = (ImageView) findViewById(R.id.recipePicture);
+
+        Intent intent = getIntent();
+        String recipeName = intent.getExtras().getString("recipeName");
+        if("fettuccine alfredo".equalsIgnoreCase(recipeName)) {
+            recipePicture.setImageResource(R.drawable.fettucinerecipe);
+        } else if ("spaghetti and meatballs".equalsIgnoreCase(recipeName)) {
+            recipePicture.setImageResource(R.drawable.spaghettirecipe);
+        } else {
+            recipePicture.setImageResource(R.drawable.spaghettirecipe);
+        }
     }
 
     public void onClick(View v) {

@@ -26,4 +26,113 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.96" />
 
+    <RadioGroup
+        android:layout_width="284dp"
+        android:layout_height="544dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.497">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="closest match"
+            android:textColor="@color/darkFont"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="prep time"
+            android:textColor="@color/darkFont"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="difficulty"
+            android:textColor="@color/darkFont"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/grayedOut"
+            android:enabled="false"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="expiry date"
+            android:textColor="@color/grayedOut"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/grayedOut"
+            android:enabled="false"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="popularity"
+            android:textColor="@color/grayedOut"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/grayedOut"
+            android:enabled="false"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="low sodium"
+            android:textColor="@color/grayedOut"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:buttonTint="@color/grayedOut"
+            android:enabled="false"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="right"
+            android:onClick="onRadioButtonClicked"
+            android:text="low sugar/carbs"
+            android:textColor="@color/grayedOut"
+            android:textSize="20sp" />
+
+
+    </RadioGroup>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -91,6 +91,7 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
                 "fettuccine alfredo",
                 getImage(this, "recipe_alfredo"),
                 "30 minutes",
+                30,
                 "easy",
                 100,
                 "You've got everything!"
@@ -99,6 +100,7 @@ public class CompletedActivity extends AppCompatActivity implements View.OnClick
                 "grilled cheese",
                 getImage(this, "recipe_grilledcheese"),
                 "10 minutes",
+                10,
                 "easy",
                 100,
                 "You've got everything!"
