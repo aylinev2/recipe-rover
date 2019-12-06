@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button fridgeButton;
@@ -22,13 +23,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button profileButton;
     private Button filterButton;
     private Button sortButton;
-    private Button favoritedButton;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
     public static ArrayList<Recipe> recipes;
+    public static ArrayList<Recipe> originalRecipes;
+    public static HashMap<String, Boolean> clicked = new HashMap<String, Boolean>() {{
+        put("italian", false); put("vegetarian", false); put("dinner", false); put("breakfast", false);
+    }};
 
     private MainActivity act = this;
 
@@ -132,10 +136,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recipes.add(new Recipe(
                 "spaghetti and meatballs",
                 getImage(this, "recipe_spaghetti"),
-                "1 hour 15 minutes",
-                75,
-                "medium",
-                90,
+                "1 hour",
+                60,
+                "easy",
+                95,
                 "Worcestershire sauce"
         ));
         recipes.add(new Recipe(
@@ -143,8 +147,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 getImage(this, "recipe_alfredo"),
                 "20 minutes",
                 20,
-                "easy",
-                95,
+                "hard",
+                100,
                 "You've got everything!"
         ));
         recipes.add(new Recipe(
@@ -152,10 +156,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 getImage(this, "recipe_pizza"),
                 "2 hours",
                 120,
-                "hard",
-                100,
+                "medium",
+                65,
                 "active dry yeast, chopped fresh oregano"
         ));
+
     }
 
     public static Drawable getImage(Context c, String ImageName) {

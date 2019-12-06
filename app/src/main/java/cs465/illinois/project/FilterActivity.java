@@ -13,9 +13,6 @@ import java.util.HashMap;
 public class FilterActivity extends AppCompatActivity implements View.OnClickListener {
     private Button applyButton;
     private Button italian, vegetarian, dinner, breakfast;
-    private HashMap<String, Boolean> clicked = new HashMap<String, Boolean>() {{
-        put("italian", false); put("vegetarian", false); put("dinner", false); put("breakfast", false);
-    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,60 +25,78 @@ public class FilterActivity extends AppCompatActivity implements View.OnClickLis
         applyButton.setOnClickListener(this);
 
         italian = (Button) findViewById(R.id.italian);
+        if (MainActivity.clicked.get("italian")) {
+            italian.setBackgroundResource(R.drawable.rounded_button_three);
+        } else {
+            italian.setBackgroundResource(R.drawable.rounded_button_four);
+        }
         italian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean click = clicked.get("italian");
+                boolean click = MainActivity.clicked.get("italian");
                 if (click) {
-                    //Drawable image = (Drawable)getResources().getDrawable(R.drawable.rounded_button_three);
                     italian.setBackgroundResource(R.drawable.rounded_button_four);
                 } else {
-                    //Drawable image = (Drawable)getResources().getDrawable(R.drawable.rounded_button_three);
                     italian.setBackgroundResource(R.drawable.rounded_button_three);
                 }
-                clicked.put("italian", !click);
+                MainActivity.clicked.put("italian", !click);
             }
         });
 
         vegetarian = (Button) findViewById(R.id.vegetarian);
+        if (MainActivity.clicked.get("vegetarian")) {
+            vegetarian.setBackgroundResource(R.drawable.rounded_button_three);
+        } else {
+            vegetarian.setBackgroundResource(R.drawable.rounded_button_four);
+        }
         vegetarian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean click = clicked.get("vegetarian");
+                boolean click = MainActivity.clicked.get("vegetarian");
                 if (click) {
                     vegetarian.setBackgroundResource(R.drawable.rounded_button_four);
                 } else {
                     vegetarian.setBackgroundResource(R.drawable.rounded_button_three);
                 }
-                clicked.put("vegetarian", !click);
+                MainActivity.clicked.put("vegetarian", !click);
             }
         });
 
         dinner = (Button) findViewById(R.id.dinner);
+        if (MainActivity.clicked.get("dinner")) {
+            dinner.setBackgroundResource(R.drawable.rounded_button_three);
+        } else {
+            dinner.setBackgroundResource(R.drawable.rounded_button_four);
+        }
         dinner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean click = clicked.get("dinner");
+                boolean click = MainActivity.clicked.get("dinner");
                 if (click) {
                     dinner.setBackgroundResource(R.drawable.rounded_button_four);
                 } else {
                     dinner.setBackgroundResource(R.drawable.rounded_button_three);
                 }
-                clicked.put("dinner", !click);
+                MainActivity.clicked.put("dinner", !click);
             }
         });
 
         breakfast = (Button) findViewById(R.id.breakfast);
+        if (MainActivity.clicked.get("breakfast")) {
+            breakfast.setBackgroundResource(R.drawable.rounded_button_three);
+        } else {
+            breakfast.setBackgroundResource(R.drawable.rounded_button_four);
+        }
         breakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean click = clicked.get("breakfast");
+                boolean click = MainActivity.clicked.get("breakfast");
                 if (click) {
                     breakfast.setBackgroundResource(R.drawable.rounded_button_four);
                 } else {
                     breakfast.setBackgroundResource(R.drawable.rounded_button_three);
                 }
-                clicked.put("breakfast", !click);
+                MainActivity.clicked.put("breakfast", !click);
             }
         });
 

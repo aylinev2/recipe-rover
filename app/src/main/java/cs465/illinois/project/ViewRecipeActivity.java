@@ -56,7 +56,7 @@ public class ViewRecipeActivity extends AppCompatActivity implements View.OnClic
         } else if ("spaghetti and meatballs".equalsIgnoreCase(recipeName)) {
             recipePicture.setImageResource(R.drawable.spaghettirecipe);
         } else {
-            recipePicture.setImageResource(R.drawable.spaghettirecipe);
+            recipePicture.setImageResource(R.drawable.pizzarecipe);
         }
     }
 
