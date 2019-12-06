@@ -16,6 +16,7 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
     private TextView txtRecipeName, txtPrepTime, txtDifficulty, txtMissingIngredients, txtPercentMatch;
     private ImageView imgRecipePicture;
     private Button btnMainFavorited;
+    private Button btnViewRecipe;
     private View item;
     private Context context;
 
@@ -29,11 +30,19 @@ public class RecipeHolder extends RecyclerView.ViewHolder {
         txtMissingIngredients = itemView.findViewById(R.id.txtMissingIngredients);
         txtPercentMatch = itemView.findViewById(R.id.txtPercentMatch);
         btnMainFavorited = itemView.findViewById(R.id.btnMainFavorited);
+        btnViewRecipe = itemView.findViewById(R.id.btnViewRecipe);
 
         btnMainFavorited.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RecipeAdapter.onClickListener.favouriteButtonOnClick(v, getAdapterPosition());
+            }
+        });
+
+        btnViewRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecipeAdapter.onClickListener.viewRecipeButtonOnClick();
             }
         });
 

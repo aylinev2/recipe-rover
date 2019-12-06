@@ -117,14 +117,29 @@
 
                 android:id="@+id/btnMainFavorited"
 
-                android:layout_margin="10dp"
-                android:layout_below="@+id/txtDifficulty"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/txtMissingIngredients"
+
                 android:layout_alignParentRight="true"
 
                 android:background="@drawable/icon_heart"
                 />
 
         </RelativeLayout>
+
+        <Button
+            android:background="@drawable/rounded_button"
+            android:id="@+id/btnViewRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="View Recipe"
+            android:fontFamily="@font/quicksand_medium"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            />
+
 
     </LinearLayout>
 

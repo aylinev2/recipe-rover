@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static ArrayList<Recipe> recipes;
 
+    private MainActivity act = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +88,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     recipes.get(position).setFavorited(true);
                 }
             }
+
+            @Override
+            public void viewRecipeButtonOnClick() {
+                Intent intent = new Intent(act, ViewRecipeActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
         });
         recyclerView.setAdapter(adapter);
 
@@ -135,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recipes.add(new Recipe(
                 "pepperoni pizza",
                 getImage(this, "recipe_pizza"),
-                "2 hours 20 minutes",
+                "2 hours",
                 "medium",
                 80,
                 "active dry yeast, chopped fresh oregano"

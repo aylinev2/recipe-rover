@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CompletedActivity"></activity>
+        <activity android:name=".ViewRecipeActivity"></activity>
+        <activity android:name=".CompletedActivity" />
         <activity android:name=".SortActivity" />
         <activity android:name=".FilterActivity" />
         <activity android:name=".EditItemActivity" />

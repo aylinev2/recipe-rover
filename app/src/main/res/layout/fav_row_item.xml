@@ -46,7 +46,7 @@
 
             android:layout_margin="10dp"
 
-            android:background="@drawable/icon_heart"
+            android:background="@drawable/icon_heartfilled"
             />
 
 
